@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /* Input marks of phys, chem, maths, bio and cs. Calc perc and grade as:\
+Percentage >= 90% : Grade A\
+Percentage >= 80% : Grade B\
+Percentage >= 70% : Grade C\
+Percentage >= 60% : Grade D\
+Percentage >= 40% : Grade E\
+Percentage < 40% : Grade F      */\
+\
+#include <stdio.h>\
+\
+int main()\
+\{\
+    int i;\
+    float marks[5], per, sum=0;\
+    char grade;\
+    for(i=0; i<5; i++)\
+    \{\
+        printf("Enter marks in subject %d: ", i+1);\
+        scanf("%f", &marks[i]);\
+        sum = sum + marks[i];\
+    \}\
+    per = sum / 5;\
+    if(per >= 90)\
+        grade = 'A';\
+    else if(per >=80 && per<90)\
+        grade = 'B';\
+    else if(per >= 70 && per<80)\
+        grade = 'C';\
+    else if(per >= 60 && per<70)\
+        grade = 'D';\
+    else if(per >= 50 && per<60)\
+        grade = 'E';\
+    else\
+        grade = 'F';\
+    printf("\\nPercentage: %f", per);\
+    printf("\\nGrade obtained: %c", grade);\
+\}}
